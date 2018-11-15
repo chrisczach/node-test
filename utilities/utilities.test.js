@@ -1,10 +1,10 @@
-const utilities = require('./utilities');
 const expect = require('expect');
+const utilities = require('./utilities');
+it('should run test', () => true);
 
 it('should add two numbers', () => {
   expect(utilities.add(4, 5))
-    .toBeA('number')
-    .toBe(9);
+  .toBe(9);
 });
 
 it('should add square a number', () => {
@@ -26,8 +26,11 @@ it('should set first and last name', () => {
     .toEqual(result);
 });
 
-it('should async add two numbers', () => {
-  utilities.asyncAdd(4, 3, (sum)=> {
-    expect(sum).toBe(7).toBeA('number')
-  })
-})
+it('should async add two numbers', (done) => {
+  utilities.asyncAdd(4, 3, (sum) => {
+    expect(sum)
+      .toBe(7)
+      .toBeA('number');
+    done();
+  });
+});

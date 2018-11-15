@@ -7,7 +7,8 @@ module.exports.setName = (user, fullName) => {
 };
 
 module.exports.asyncAdd = (a,b,callback) => {
-  setTimeout(callback(a+b), 30)
+  const timeOutHandler = () => callback(a+b);
+  setTimeout(timeOutHandler, 250)
 }
 
 
